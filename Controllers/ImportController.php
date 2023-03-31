@@ -204,6 +204,21 @@ class ImportController extends Controller {
      */
     public function import(Request $request): JsonResponse {
         try {
+    
+    
+            $a = [
+                0.001 => 'a',
+                .6    => 'c'
+            ];
+            var_dump($a);
+    
+            return response()->json(
+                [
+                    'success' => '',
+                ]
+            );
+    
+    
             $file_name = $request->file->getClientOriginalName();
             $response = $this->read_and_import($request->file->getRealPath());
 
